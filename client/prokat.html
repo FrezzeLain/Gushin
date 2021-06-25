@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Прокат</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/icons/font/flaticon.css">
+</head>
+<body>
+    <nav class="d-flex align-center justify-center">
+        <div class="maxWidth75 d-flex space-between">
+            <h2 class="logo"><span class="redMain">Р</span>ус<span class="redMain">П</span>рокат</h2>
+            <div class="navSpace"></div>
+            <div class="navForm d-flex">
+                <a href="/"><h2 class="navItem">Главная</h2></a>
+                <a href="/prokat"><h2 class="navItem">Прокат</h2></a>
+                <h2 class="navItem">О компании</h2>
+            </div>
+        </div>
+    </nav>
+    <section class="headerProkat">
+        <div class="prokatImg">
+            <div class="overflowHead d-flex justify-center align-center relative">
+                <div class="blockHead d-flex justify-center align-center flex-column">
+                    <h2 class="h2Main">Добро пожаловать на страницу проката!</h2>
+                    <hr class="defHR black">
+                    <h2 class="h2Main">Здесь вы сможете выбрать подходящий автомобиль</h2>
+                </div>
+                <div class="headAtten d-flex flex-column mt-2">
+                    <i class="flaticon-angle-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="d-flex justify-center align-center resault" id="main">
+        <div class="maxWidth75 container_minH100 d-flex align-center justify-start flex-column">
+            <div class="w100 d-flex flex-column align-center white">
+                <h1 class="h1Main mt-7">Выберите необходимые условия</h1>
+                <div class="inputs w100 mt-7 d-flex align-center space-between">
+                    <select name="" id="selectTown" class="selectProkat" @change=check>
+                        <option value="0" selected>Выберите Город</option>
+                        <option value="1">Кострома</option>
+                        <option value="2">Москва</option>
+                        <option value="3">Ярославль</option>
+                    </select>
+                    <select name="" id="selectMarka" class="selectProkat" @change=check>
+                        <option value="0" selected>Выберите марку автомобиля</option>
+                        <option value="1">Hyndai</option>
+                        <option value="2">Opel</option>
+                        <option value="3">Lada</option>
+                    </select>
+                </div>
+                <div class="mt-2  d-flex flex-column justify-center align-center">
+                    <h2 class="h2Radio">Выберите цвет автомобиля: | По умолчанию: Любой</h2>
+                    <div class="mt-2 w100 d-flex justify-center">
+                        <input type="radio" checked name="radio" class="radioProkat" id="col0" value="0" @change=check>
+                        <label for="col0" class="labelRadio"></label>
+                        <input type="radio" name="radio" class="radioProkat" id="col1" value="1" @change=check>
+                        <label for="col1" class="labelRadio"></label>
+                        <input type="radio"  name="radio" class="radioProkat" id="col2" value="2" @change=check>
+                        <label for="col2" class="labelRadio"></label>
+                        <input type="radio"  name="radio" class="radioProkat" id="col3" value="3" @change=check>
+                        <label for="col3"class="labelRadio"></label>
+                        <input type="radio"  name="radio" class="radioProkat" id="col4" value="4" @change=check>
+                        <label for="col4" class="labelRadio"></label>
+                        <input type="radio"  name="radio" class="radioProkat" id="col5" value="5" @change=check>
+                        <label for="col5" class="labelRadio"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="results d-flex flex-column mt-7 w100 align-center">
+                <div class="AllResults w100 mt-2 d-flex flex-wrap  align-start space-around" v-if="allCar">
+                    <h2 class="h2Radio"><i class="flaticon-loupe"></i> | Результаты поиска:</h2>
+                    <div class="blockResults d-flex" v-for="car in allCar">
+                        <div class="overflowRes d-flex flex-column align-center">
+                            <h2 class="h2Attent">{{car.town}} | {{car.marka}} | {{car.color}}</h2>
+                            <img v-bind:src="car.photo" alt="">
+                            <div class="w80 mt-2">
+                                <button class="btn btn-res">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else>
+                    <h2>К сожалению, по вашему запросу ничего не найдено.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="assets/frontJS/frontend_prokat.js"></script>
+</body>
+</html>

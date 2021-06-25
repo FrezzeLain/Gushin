@@ -1,0 +1,628 @@
+@font-face {
+    font-family: Cor-Bold;
+    src: url("fonts/CormorantUnicase-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Cor-Reg;
+    src: url("fonts/CormorantUnicase-Medium.ttf");
+    font-weight: 300;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Cor-Bold;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+footer{
+    height: 30vh;
+    background-color: #262222;
+    position: relative;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6vh;
+    background-color: rgba(34,31,40, 0.7);
+    box-shadow: 0 0.2vh 1vh black;
+    z-index: 1000;
+}
+
+/* Основные */
+
+.relative{
+    position: relative;
+}
+
+.redMain{
+    color: #e74c3c;
+    font-size: 46px;
+}
+
+.logo{
+    font-size: 42px;
+    color: white;
+    line-height: 6vh;
+}
+
+.navItem{
+    font-size: 27px;
+    line-height: 6vh;
+    padding: 0 0 0 2vw;
+    color: white;
+    cursor: pointer;
+}
+
+.container{
+    height: 100%;
+}
+
+.container_minH100{
+    min-height: 100vh;
+}
+
+.maxWidth75{
+    width: 75vw;
+}
+
+.maxWidth80{
+    width: 80vw;
+}
+
+.mt-2{
+    margin-top: 2vh;
+}
+
+.mt-7{
+    margin-top: 7vh;
+}
+
+.w100{
+    width: 100%;
+}
+
+.w80{
+    width: 80%;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.justify-start{
+    justify-content: flex-start;
+}
+
+.justify-end{
+    justify-content: flex-end;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-start{
+    align-items: flex-start;
+}
+
+.align-end{
+    align-items: flex-end;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+section{
+
+    background-color: #ecf0f1;
+}
+
+.btn{
+    border: 0.1vh solid black;
+    padding: 1vh 3vh;
+    font-size: 20px;
+}
+
+.h1Main{
+    font-size: 4vh;
+    position: relative;
+}
+
+.h1Main:after{
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 0.1vh;
+    background-color: black;
+}
+
+.h2Main{
+    font-size: 3.6vh;
+}
+
+.h3Main{
+    font-size: 2.8vh;
+}
+
+/* Конец Основных */
+
+.headItem{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.head1{
+    background-image: url("images/head2.jpg");
+    z-index: 1;
+}
+
+
+.head3{
+    background-image: url("images/head3.jpg");
+    z-index: 3;
+    clip-path: circle(0%);
+    animation: head3 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes head2 {
+    0%{
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%,100% 0%);
+    }
+    20%{
+        clip-path: polygon(0% 0%, 0% 100%, 0% 100%,100% 0%);
+    }
+    40%{
+        clip-path: polygon(0% 0%, 0% 0%, 0% 0%,100% 0% );
+    }
+    100%{
+        clip-path: polygon(0% 0%, 0% 0%, 0% 0%,100% 0% );
+    }
+}
+
+@keyframes head3 {
+    0%{
+        clip-path: polygon(0% 0%, 0% 1000%, 0% 1000%,0% 100%);
+    }
+    20%{
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%,100% 100%);
+    }
+    40%{
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%,100% 0%);
+    }
+    100%{
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%,100% 0%);
+    }
+}
+
+.overflowHead{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255, 0.2), rgba(0,0,0,0.7));
+}
+
+.headAtten{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+    animation: attention 2s infinite linear;
+}
+
+@keyframes attention {
+    0%{
+        top: 85%;
+    }
+    50%{
+        top: 87%;
+    }
+    100%{
+        top: 85%;
+    }
+}
+
+.headAtten i:before{
+    color: white;
+    font-size: 5vh;
+    margin-left: 0 !important;
+}
+
+.leftHead{
+    width: 45vw;
+}
+
+.rightHead{
+    width: 45vw;
+}
+
+.headerMain{
+    background-image: url("images/header.jpg");
+    height: 427px;
+    width: 640px;
+}
+
+.blockHead{
+    width: 100vw;
+    background-color: rgba(255,255,255,0.9);
+    min-height: 50vh;
+}
+
+.headH1{
+    color: black;
+    font-size: 62px;
+    text-align: center;
+}
+
+.headP{
+    color: black;
+    font-size: 24px;
+    text-align: justify;
+    letter-spacing: 0.2vh;
+    padding-top: 5vh;
+}
+
+.niceH1{
+    color: white;
+    font-size: 100px;
+    letter-spacing: 1vh;
+    text-align: center;
+}
+
+.defHR{
+    border: none;
+    background-color: white;
+    width: 45vw;
+    height: 0.4vh;
+}
+
+.black{
+    background-color: black;
+    height: 0.2vh;
+    margin: 2vh 0;
+}
+
+.btnHead{
+    margin-top: 2vh;
+    background-color: inherit;
+    letter-spacing: 6px;
+    transition: all 0.5s;
+    box-shadow: 2px 2px 1px black;
+}
+
+.btnHead:hover{
+    background-color: black;
+    color: white;
+    transition: all 0.5s;
+}
+
+.blockAbout{
+    height: 35vh;
+    width: 35vw;
+    background-color: white;
+    box-shadow: 5px 5px 1px black;
+    transition: all 0.5s;
+}
+
+.blockAbout:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 0 black;
+    transition: all 0.5s;
+}
+
+.lastBlock{
+    margin-top: 5vh;
+}
+
+.aboutName i:before{
+    font-size: 6vh;
+    padding-right: 2vh;
+}
+
+.blockAbout .h2Main{
+    padding-left: 2vh;
+}
+
+.borderAbout{
+    width: 0.1vh;
+    height: 50%;
+    background-color: black;
+}
+
+.pAbout{
+    font-size: 2.4vh;
+    padding: 2vh 5vh;
+    text-align: justify;
+}
+
+.blockAbout .h3Main{
+    align-self: flex-end;
+    padding: 10vh 5vh 0 0 ;
+}
+
+.callback{
+    background-image: url("images/callBack.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.callIcons{
+    margin-top: 5vh;
+}
+
+.callIcons i:before{
+    font-size: 3.2vh;
+    padding-right: 2vw;
+}
+
+.callIcons div{
+    padding: 0.5vh 0;
+}
+
+.callIcons h3{
+    min-width: 10vw;
+    font-size: 2.4vh;
+}
+
+.callback .blockHead{
+    clip-path: polygon(0% 0%, 20% 100%, 100% 100%, 100% 0%);
+}
+
+.copyright{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footerIcons{
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+}
+
+footer h2{
+    color: white;
+    font-size: 2.4vh;
+}
+
+.footerIcons i:before{
+    color: white;
+    font-size: 3vh;
+}
+
+.contentFooter{
+    padding-top: 3vh;
+}
+
+.contentFooter h2{
+    text-transform: uppercase;
+}
+
+/* Прокат */
+
+.headerProkat{
+    height: 70vh !important;
+}
+
+.prokatImg{
+    height: 70vh;
+    background-image: url("images/prokatHead.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.inputs{
+    width: 47%;
+}
+
+.headerProkat .blockHead{
+    clip-path: polygon(2% 0%, 10% 50%, 2% 100%, 45% 100%, 50% 95%, 55% 100%, 98% 100%, 90% 50%, 98% 0%);
+}
+
+.selectProkat{
+    font-size: 2.4vh;
+    padding: 0.5vh 2vh 0.5vh 0.5vh;
+    margin-right: 1vh;
+}
+
+.selectProkat h2{
+    font-size: 2.4vh;
+    text-align: center;
+}
+
+.radioProkat{
+    display: none;
+}
+
+.radioProkat:checked+label:after{
+    display: block;
+}
+
+.labelRadio{
+    font-size: 0;
+    height: 0;
+    width: 0;
+    padding: 2.5vh;
+    border-radius: 50%;
+    margin: 0 1vh;
+    position: relative;
+    cursor: pointer;
+    border: 0.1vh solid black;
+}
+
+.labelRadio:after{
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 0.3vh;
+    background-color: black;
+    display: none;
+}
+
+#col1+label{
+    background-color: red;
+}
+
+#col2+label{
+    background-color: white;
+}
+
+#col3+label{
+    background-color: black;
+}
+
+#col4+label{
+    background-color: yellow;
+}
+
+#col5+label{
+    background-color: #3498db;
+}
+
+#col0+label{
+    background: linear-gradient(130deg, black, white);
+}
+
+.h2Radio{
+    font-size: 2.8vh;
+}
+
+.h2Radio i:before{
+    font-size: 2.5vh
+}
+
+.AllResults{
+    background-color: white;
+    min-height: 50vh;
+    padding-bottom: 3vh;
+}
+
+.AllResults .h2Radio{
+    width: 100%;
+    text-align: center;
+    justify-self: center;
+    padding-top: 3vh;
+}
+
+.resault{
+    padding-bottom: 10vh;
+    min-height: 100vh;
+}
+
+.blockResults{
+    width: 45%;
+    width: 45%;
+    height: 42vh;
+    margin: 3vh 3vh 0 3vh;
+    background-image: url("images/backRes.jpg");
+    background-size: cover;
+    background-position: center top;
+}
+
+.blockResults img{
+    height: 60%;
+    margin-top: 1vh;
+}
+
+.overflowRes{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(130deg, rgba(255,255,255,0.8), rgba(255,255,255,0.8));
+}
+
+.h2Attent{
+    font-size: 3vh;
+    position: relative;
+    margin-bottom: 2vh;
+    text-align: start;
+    padding-top: 1vh;
+    width: 80%;
+    text-align: center;
+}
+
+.h2Attent:after{
+    content: '';
+    width: 100%;
+    height: 0.2vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15%;
+    background-color: black;
+}
+
+.btn-res{
+    background-color: white;
+}
+
+
+/* Конец Проката */
+
+.white{
+    background-color: white;
+    padding-bottom: 10vh;
+    margin-top: 10vh;
+}
+
+.aboutCompany .h1Main{
+    margin-bottom: 6vh;
+}
+
+.callback .overflowHead{
+    clip-path: polygon(0% 0%, 20% 100%, 100% 100%, 100% 0%);
+}
+
+.callback, .aboutCompany{
+    min-height: 100vh;
+}
